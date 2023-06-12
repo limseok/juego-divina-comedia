@@ -22,7 +22,7 @@
 [ext_resource path="res://Graficos/cubo.png" type="Texture" id=20]
 [ext_resource path="res://Graficos/Font/Kenney Mini Square.ttf" type="DynamicFontData" id=21]
 [ext_resource path="res://Personajes/Enemigos/huerfano/huerfano.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Graficos/set/background5.png" type="Texture" id=23]
+[ext_resource path="res://Graficos/set/fonodo.png" type="Texture" id=23]
 
 [sub_resource type="DynamicFont" id=1]
 size = 11
@@ -89,7 +89,7 @@ motion_mirroring = Vector2( 384, 0 )
 script = ExtResource( 3 )
 
 [node name="spr" type="Sprite" parent="ParallaxBackground/fondo"]
-position = Vector2( 216, 96 )
+position = Vector2( 582.76, -48.846 )
 scale = Vector2( 1.01563, 1.06634 )
 texture = ExtResource( 1 )
 
@@ -97,11 +97,12 @@ texture = ExtResource( 1 )
 motion_mirroring = Vector2( 420, 0 )
 
 [node name="spr" type="Sprite" parent="ParallaxBackground/hojas"]
-position = Vector2( 216, 32 )
+position = Vector2( 177.071, 374.277 )
+scale = Vector2( 0.596825, 0.506885 )
 texture = ExtResource( 23 )
 
 [node name="Inca" parent="." instance=ExtResource( 4 )]
-position = Vector2( 48, 56 )
+position = Vector2( 47.6464, 45.747 )
 
 [node name="Camera2D" type="Camera2D" parent="Inca"]
 current = true
@@ -164,7 +165,7 @@ __meta__ = {
 }
 
 [node name="Rata" parent="CanvasLayer/Label" instance=ExtResource( 13 )]
-position = Vector2( 1353, 200 )
+position = Vector2( 1375.5, 197.105 )
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
 margin_right = 64.0

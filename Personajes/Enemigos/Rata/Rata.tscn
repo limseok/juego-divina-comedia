@@ -12,7 +12,7 @@
 extents = Vector2( 12.8307, 9.19461 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 15.4162, 5.61477 )
+extents = Vector2( 15.4767, 6.21108 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Movimiento"
@@ -28,7 +28,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 6 ]
+"values": [ 5 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("spr:frame")
@@ -151,8 +151,10 @@ position = Vector2( -3.87816, 5.46921 )
 shape = SubResource( 1 )
 
 [node name="spr" parent="." index="1"]
+position = Vector2( -4.70136, -4.96624 )
+scale = Vector2( 0.501524, 0.250514 )
 texture = ExtResource( 1 )
-hframes = 6
+hframes = 5
 frame = 1
 
 [node name="StateMachine" parent="." index="2"]
