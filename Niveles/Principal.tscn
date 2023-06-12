@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Recursos/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scripts/Parallax/Cielo.gd" type="Script" id=2]
@@ -23,6 +23,50 @@
 [ext_resource path="res://fuentes/GameSetDemoRegular.ttf" type="DynamicFontData" id=21]
 [ext_resource path="res://Graficos/Musica/pasos.ogg" type="AudioStream" id=22]
 [ext_resource path="res://Personajes/Enemigos/Malo/Malo.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Graficos/Player/teodoro-1.png.png" type="Texture" id=24]
+
+[sub_resource type="RectangleShape2D" id=6]
+
+[sub_resource type="Animation" id=7]
+resource_name = "Nueva Animación"
+length = 0.6
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Position2D/Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 24 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Position2D/Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 4 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Position2D/Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( -0.1, 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 2, 1, 3 ]
+}
 
 [sub_resource type="DynamicFont" id=1]
 size = 13
@@ -60,6 +104,24 @@ extents = Vector2( 72.7981, 116.716 )
 [node name="Principal" type="Node2D"]
 script = ExtResource( 14 )
 
+[node name="virgilio" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="virgilio"]
+shape = SubResource( 6 )
+
+[node name="Position2D" type="Position2D" parent="virgilio"]
+
+[node name="Sprite" type="Sprite" parent="virgilio/Position2D"]
+position = Vector2( 237.29, 146.928 )
+scale = Vector2( 0.082986, 0.0868631 )
+texture = ExtResource( 24 )
+hframes = 4
+frame = 3
+region_rect = Rect2( 0, 0, 2018.14, 619.523 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="virgilio"]
+"anims/Nueva Animación" = SubResource( 7 )
+
 [node name="Tilemaps" type="Node2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Tilemaps"]
@@ -82,7 +144,7 @@ motion_mirroring = Vector2( 380, 0 )
 script = ExtResource( 2 )
 
 [node name="spr" type="Sprite" parent="ParallaxBackground/Cielo"]
-position = Vector2( 194.86, 121.194 )
+position = Vector2( 195.39, 121.194 )
 scale = Vector2( 1.00518, 1 )
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 180, 0 )

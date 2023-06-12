@@ -203,9 +203,9 @@ scale = Vector2( 1.29007, 1.13716 )
 
 [node name="spr" type="Sprite" parent="Position2D"]
 scale = Vector2( 0.2576, 0.325162 )
-texture = ExtResource( 3 )
-hframes = 9
-frame = 6
+texture = ExtResource( 2 )
+hframes = 3
+frame = 1
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/Detenido = SubResource( 2 )
