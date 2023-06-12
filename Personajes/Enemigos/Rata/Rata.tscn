@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Graficos/rat.png" type="Texture" id=1]
+[ext_resource path="res://Graficos/5.png" type="Texture" id=1]
 [ext_resource path="res://Graficos/enemy-deadth.png" type="Texture" id=2]
 [ext_resource path="res://Personajes/Enemigos/Enemigo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Personajes/Enemigos/Rata/Estados/Muerto.gd" type="Script" id=4]
@@ -28,7 +28,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 5 ]
+"values": [ 3 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("spr:frame")
@@ -37,10 +37,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ 1, 2, 3, 4, 5 ]
+"values": [ 0, 1, 2 ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("spr:texture")
@@ -151,11 +151,11 @@ position = Vector2( -3.87816, 5.46921 )
 shape = SubResource( 1 )
 
 [node name="spr" parent="." index="1"]
-position = Vector2( -4.70136, -4.96624 )
-scale = Vector2( 0.501524, 0.250514 )
+position = Vector2( -2.64865, 4.0392 )
+scale = Vector2( 0.590772, 0.348096 )
 texture = ExtResource( 1 )
-hframes = 5
-frame = 1
+hframes = 3
+frame = 2
 
 [node name="StateMachine" parent="." index="2"]
 script = ExtResource( 6 )

@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Leyenda de los Monolitos"
+config/name="El super infierno de dante"
 run/main_scene="res://menu.tscn"
 config/icon="res://Graficos/icono.png"
 

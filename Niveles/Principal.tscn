@@ -356,6 +356,18 @@ position = Vector2( 1718.79, 95.0213 )
 [node name="Node2D" type="Node2D" parent="lobo"]
 
 [node name="Sprite" type="Sprite" parent="lobo"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1815.65
+margin_top = 74.6052
+margin_right = 1953.65
+margin_bottom = 122.605
+text = "Felicidades dante
+ Lograste vencer a las
+ bestias....."
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="Inca/Camera2D/Timer" to="Inca/Camera2D" method="_on_Timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/muerte/Button" to="Inca" method="_on_Button_pressed"]
 [connection signal="animation_finished" from="CanvasLayer/muerte/anim" to="CanvasLayer/muerte" method="_on_anim_animation_finished"]
