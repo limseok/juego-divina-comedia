@@ -207,7 +207,6 @@ position = Vector2( 0.645607, 0.528082 )
 scale = Vector2( 0.231172, 0.237755 )
 texture = ExtResource( 2 )
 hframes = 3
-frame = 1
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/Detenido = SubResource( 2 )

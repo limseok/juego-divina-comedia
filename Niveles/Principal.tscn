@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Recursos/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scripts/Parallax/Cielo.gd" type="Script" id=2]
@@ -25,8 +25,12 @@
 [ext_resource path="res://Personajes/Enemigos/Malo/Malo.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Graficos/Player/teodoro-1.png.png" type="Texture" id=24]
 [ext_resource path="res://Graficos/set/background5.png" type="Texture" id=25]
+[ext_resource path="res://Graficos/burbuja.png" type="Texture" id=26]
+[ext_resource path="res://Niveles/movimiento.gd" type="Script" id=27]
 
 [sub_resource type="RectangleShape2D" id=1]
+
+[sub_resource type="AtlasTexture" id=8]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Nueva Animación"
@@ -117,11 +121,36 @@ position = Vector2( 237.29, 146.928 )
 scale = Vector2( 0.082986, 0.0868631 )
 texture = ExtResource( 24 )
 hframes = 4
-frame = 3
+frame = 2
 region_rect = Rect2( 0, 0, 2018.14, 619.523 )
+
+[node name="Sprite2" type="Sprite" parent="virgilio/Position2D"]
+position = Vector2( 174.603, 76.4372 )
+scale = Vector2( -0.190976, 0.209163 )
+texture = ExtResource( 26 )
+normal_map = SubResource( 8 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="virgilio"]
 "anims/Nueva Animación" = SubResource( 2 )
+
+[node name="Label" type="Label" parent="virgilio"]
+margin_left = 132.0
+margin_top = 50.0
+margin_right = 309.0
+margin_bottom = 105.0
+rect_scale = Vector2( 0.556573, 0.652158 )
+text = "Hola Dante.
+Me llamo Virgilio y 
+te guiare durante tu camino.
+Ten cuidado........."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node" type="Node" parent="virgilio"]
+
+[node name="movimiento" type="Node" parent="virgilio/Node"]
+script = ExtResource( 27 )
 
 [node name="Tilemaps" type="Node2D" parent="."]
 
@@ -145,7 +174,7 @@ motion_mirroring = Vector2( 380, 0 )
 script = ExtResource( 2 )
 
 [node name="spr" type="Sprite" parent="ParallaxBackground/Cielo"]
-position = Vector2( 192.401, 125.813 )
+position = Vector2( 191.51, 125.813 )
 scale = Vector2( 1.25601, 1 )
 texture = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 180, 0 )
