@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://fuentes/GameSetDemoRegular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Graficos/lucifer.JPG" type="Texture" id=2]
+[ext_resource path="res://agradecimientos.gd" type="Script" id=3]
+[ext_resource path="res://fuentes/Gameplay.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=3]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="TextureRect" parent="."]
+margin_right = 420.0
+margin_bottom = 293.0
+texture = ExtResource( 2 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 142.046
+margin_top = 215.966
+margin_right = 181.046
+margin_bottom = 235.966
+custom_fonts/font = SubResource( 3 )
+text = "salir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 14.4898
+margin_top = 45.5403
+margin_right = 164.49
+margin_bottom = 146.54
+custom_fonts/font = SubResource( 1 )
+text = "En el centro del noveno circulo
+reside Lucifer, EL  MAYOR DE LOS TRAIDORES
+que traicionó a DIOS
+Deborando a los 3 mayores traidores de la historia
+Judas, Bruto y Casio"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 193.0
+margin_top = 177.428
+margin_right = 314.0
+margin_bottom = 216.428
+custom_fonts/font = SubResource( 2 )
+text = "Gracias por jugar"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

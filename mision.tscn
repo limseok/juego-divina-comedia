@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Graficos/sig.png" type="Texture" id=1]
+[ext_resource path="res://Graficos/Font/Kenney Mini Square.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Graficos/wiracocha.jpg" type="Texture" id=3]
+[ext_resource path="res://Scripts/sigu.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/AudioStreamPlayer.gd" type="Script" id=5]
+[ext_resource path="res://Graficos/Musica/intro.ogg" type="AudioStream" id=6]
+[ext_resource path="res://fuentes/Gameplay.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -33.758
+margin_top = 5.73956
+margin_right = 651.242
+margin_bottom = 483.74
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "ahora rumi saldra en camino al 
+templo de kalasasaya
+para tratar de convencer al Dios 
+Wiracocha de que no convierta a las 
+personas en piedras"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sigu" type="TouchScreenButton" parent="."]
+position = Vector2( 277.965, 186.439 )
+scale = Vector2( 0.0635429, 0.0571531 )
+normal = ExtResource( 1 )
+script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+script = ExtResource( 5 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 13.9642
+margin_top = 87.37
+margin_right = 309.964
+margin_bottom = 150.37
+custom_fonts/font = SubResource( 2 )
+text = "Reunete con Virgilio que sera
+tu guia durante
+ toda esta aventura."
+align = 1
+uppercase = true
+[connection signal="pressed" from="sigu" to="sigu" method="_on_sigu_pressed"]

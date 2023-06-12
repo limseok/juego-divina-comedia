@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Graficos/hp.png" type="Texture" id=1]
+
+[node name="Sprite" type="Sprite" groups=[
+"vida",
+]]
+position = Vector2( 24.0378, 20.5021 )
+scale = Vector2( 1.3022, 1.24964 )
+texture = ExtResource( 1 )

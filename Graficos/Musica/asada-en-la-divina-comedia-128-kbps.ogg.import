@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/asada-en-la-divina-comedia-128-kbps.ogg-cfd26eded59a51de3bf1690a41c6e7b3.oggstr"
+
+[deps]
+
+source_file="res://Graficos/Musica/asada-en-la-divina-comedia-128-kbps.ogg"
+dest_files=[ "res://.import/asada-en-la-divina-comedia-128-kbps.ogg-cfd26eded59a51de3bf1690a41c6e7b3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

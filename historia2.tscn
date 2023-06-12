@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Graficos/wiracocha.jpg" type="Texture" id=1]
+[ext_resource path="res://Graficos/sig.png" type="Texture" id=2]
+[ext_resource path="res://Graficos/Font/Kenney Mini Square.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Scripts/sig.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/AudioStreamPlayer.gd" type="Script" id=5]
+[ext_resource path="res://Graficos/Musica/intro.ogg" type="AudioStream" id=6]
+[ext_resource path="res://fuentes/Gameplay.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 12
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 9
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -47.3386
+margin_top = 3.1945
+margin_right = 637.661
+margin_bottom = 584.195
+rect_scale = Vector2( 0.557642, 0.503536 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 274.0
+margin_bottom = 235.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Un día irrumpiria Supay, deidad maléfica. llegó en
+trazas disimuladas y al escucharlo todos 
+volvieron las espaldas a las enseñanzas de
+ Wiracocha. Tornadizos y crueles hicieron de la
+guerra el  medio preferido para dominar el
+pueblo. La codicia rebasó el alma de aquellas
+gentes y así vivieron mucho tiempo. Se sintieron
+fuertes en su pequeñez.
+Wiracocha primero advirtió su poder mandando
+sequias a sus plantaciones, cataclismos en sus
+tierras pero hicieron caso omiso.Indignado por 
+la desobediencia de su pueblo, en un instante
+ de indignacion aplastó la sobervia
+de esas gentes convirtiendoles en estatuas "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sig" type="TouchScreenButton" parent="."]
+position = Vector2( 277.547, 201.491 )
+scale = Vector2( 0.0881234, 0.0670533 )
+normal = ExtResource( 2 )
+script = ExtResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+script = ExtResource( 5 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 6.0
+margin_top = 8.0
+margin_right = 261.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 2 )
+text = "Dante, alter ego del poeta, se encuentra
+ perdido en medio de una selva oscura. 
+Al amanecer, llega a una
+ montaña iluminada, donde es asediado por
+ tres animales simbólicos: un leopardo,
+ un león y una loba. El alma de Virgilio, el poeta
+ latino, acude en su auxilio y le hace saber
+ que su amada Beatriz le ha encomendado
+ llevarlo hasta las puertas del paraíso.
+ Para eso, deberán pasar primero por el infierno y
+ el purgatorio."
+autowrap = true
+[connection signal="pressed" from="sig" to="sig" method="_on_sig_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/17 Northern Hemisphere.ogg-535b397903837009649818aa3a64bb40.oggstr"
+
+[deps]
+
+source_file="res://Graficos/Musica/17 Northern Hemisphere.ogg"
+dest_files=[ "res://.import/17 Northern Hemisphere.ogg-535b397903837009649818aa3a64bb40.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
