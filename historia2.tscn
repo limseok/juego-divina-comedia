@@ -6,14 +6,14 @@
 [ext_resource path="res://Scripts/sig.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/AudioStreamPlayer.gd" type="Script" id=5]
 [ext_resource path="res://Graficos/Musica/intro.ogg" type="AudioStream" id=6]
-[ext_resource path="res://fuentes/Gameplay.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://fuentes/game_over.ttf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 12
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 9
+size = 30
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 7 )
@@ -72,19 +72,10 @@ script = ExtResource( 5 )
 [node name="Label2" type="Label" parent="."]
 margin_left = 6.0
 margin_top = 8.0
-margin_right = 261.0
-margin_bottom = 200.0
+margin_right = 297.0
+margin_bottom = 215.0
 custom_fonts/font = SubResource( 2 )
-text = "Dante, alter ego del poeta, se encuentra
- perdido en medio de una selva oscura. 
-Al amanecer, llega a una
- montaña iluminada, donde es asediado por
- tres animales simbólicos: un leopardo,
- un león y una loba. El alma de Virgilio, el poeta
- latino, acude en su auxilio y le hace saber
- que su amada Beatriz le ha encomendado
- llevarlo hasta las puertas del paraíso.
- Para eso, deberán pasar primero por el infierno y
- el purgatorio."
+text = "Dante se encuentra perdido en medio de una selva oscura, al amanecer llega a una montaña iluminada donde es asediado por tres animales simbólicos bestias extrañas y maliciosas las cuales eran el león, la pantera y la loba. 
+El alma de Virgilio el poeta latino acude en su auxilio y le hace saber que su amada Beatriz le ha encomendado llevarlo hasta las puertas del paraíso, para eso debe pasar por medio del infierno y purgatorio."
 autowrap = true
 [connection signal="pressed" from="sig" to="sig" method="_on_sig_pressed"]

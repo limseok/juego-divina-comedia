@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Recursos/tiles.tres" type="TileSet" id=1]
 [ext_resource path="res://Scripts/Parallax/Cielo.gd" type="Script" id=2]
@@ -27,13 +27,13 @@
 [ext_resource path="res://Graficos/set/background5.png" type="Texture" id=25]
 [ext_resource path="res://Graficos/burbuja.png" type="Texture" id=26]
 [ext_resource path="res://Niveles/movimiento.gd" type="Script" id=27]
+[ext_resource path="res://fuentes/game_over.ttf" type="DynamicFontData" id=28]
 
 [sub_resource type="RectangleShape2D" id=1]
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=2]
 
-[sub_resource type="Animation" id=2]
-resource_name = "Nueva Animación"
+[sub_resource type="Animation" id=3]
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -73,22 +73,28 @@ tracks/2/keys = {
 "values": [ 0, 2, 1, 3 ]
 }
 
-[sub_resource type="DynamicFont" id=3]
-size = 13
-outline_size = 1
-font_data = ExtResource( 13 )
-
 [sub_resource type="DynamicFont" id=4]
-size = 13
+size = 26
 outline_size = 1
-font_data = ExtResource( 13 )
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 28 )
 
 [sub_resource type="DynamicFont" id=5]
+size = 13
+outline_size = 1
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 13
+outline_size = 1
+font_data = ExtResource( 13 )
+
+[sub_resource type="DynamicFont" id=7]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 21 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=8]
 length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:position")
@@ -103,8 +109,14 @@ tracks/0/keys = {
 "values": [ Vector2( -0.10527, -192.422 ), Vector2( 0.947342, 1.26308 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 72.7981, 116.716 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 28 )
 
 [node name="Principal" type="Node2D"]
 script = ExtResource( 14 )
@@ -125,13 +137,13 @@ frame = 2
 region_rect = Rect2( 0, 0, 2018.14, 619.523 )
 
 [node name="Sprite2" type="Sprite" parent="virgilio/Position2D"]
-position = Vector2( 174.603, 76.4372 )
-scale = Vector2( -0.190976, 0.209163 )
+position = Vector2( 165.988, 66.1363 )
+scale = Vector2( -0.171852, 0.166773 )
 texture = ExtResource( 26 )
-normal_map = SubResource( 8 )
+normal_map = SubResource( 2 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="virgilio"]
-"anims/Nueva Animación" = SubResource( 2 )
+"anims/Nueva Animación" = SubResource( 3 )
 
 [node name="Label" type="Label" parent="virgilio"]
 margin_left = 132.0
@@ -139,10 +151,10 @@ margin_top = 50.0
 margin_right = 309.0
 margin_bottom = 105.0
 rect_scale = Vector2( 0.556573, 0.652158 )
-text = "Hola Dante.
-Me llamo Virgilio y 
+custom_fonts/font = SubResource( 4 )
+text = "Hola Dante, me llamo Virgilio y 
 te guiare durante tu camino.
-Ten cuidado........."
+Ten cuidado..."
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -262,7 +274,7 @@ margin_top = -0.858201
 margin_right = 107.743
 margin_bottom = 19.1418
 rect_clip_content = true
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -273,7 +285,7 @@ margin_left = 2.11893
 margin_top = -1.5892
 margin_right = 42.1189
 margin_bottom = 12.4108
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "vidas="
 __meta__ = {
@@ -306,7 +318,7 @@ margin_left = 109.234
 margin_top = 114.331
 margin_right = 183.234
 margin_bottom = 140.331
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 text = "Reiniciar"
 __meta__ = {
@@ -314,7 +326,7 @@ __meta__ = {
 }
 
 [node name="anim" type="AnimationPlayer" parent="CanvasLayer/muerte"]
-anims/mover = SubResource( 6 )
+anims/mover = SubResource( 8 )
 
 [node name="RataRayCast2" parent="." instance=ExtResource( 7 )]
 position = Vector2( 342.678, 111.895 )
@@ -334,7 +346,7 @@ texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="cubo"]
 position = Vector2( 1372.83, 46.1088 )
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 
 [node name="Malo" parent="." instance=ExtResource( 23 )]
 position = Vector2( 443.751, 170.613 )
@@ -362,6 +374,7 @@ margin_left = 1815.65
 margin_top = 74.6052
 margin_right = 1953.65
 margin_bottom = 122.605
+custom_fonts/font = SubResource( 10 )
 text = "Felicidades dante
  Lograste vencer a las
  bestias....."

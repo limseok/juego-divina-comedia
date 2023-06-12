@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=41 format=2]
 
 [ext_resource path="res://Graficos/set/background1.png" type="Texture" id=1]
 [ext_resource path="res://Recursos/tiles.tres" type="TileSet" id=2]
@@ -9,7 +9,7 @@
 [ext_resource path="res://Scripts/Pausa.gd" type="Script" id=7]
 [ext_resource path="res://Graficos/Teclas/pause.png" type="Texture" id=8]
 [ext_resource path="res://Graficos/Musica/17 Northern Hemisphere.ogg" type="AudioStream" id=9]
-[ext_resource path="res://Personajes/Enemigos/Rata/RataRayCast.tscn" type="PackedScene" id=10]
+[ext_resource path="res://fuentes/game_over.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://fuentes/Gameplay.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://Niveles/Nivel2.gd" type="Script" id=12]
 [ext_resource path="res://Personajes/Enemigos/Rata/Rata.tscn" type="PackedScene" id=13]
@@ -27,6 +27,7 @@
 [ext_resource path="res://Graficos/set/tilesinferno.png" type="Texture" id=25]
 [ext_resource path="res://Personajes/Enemigos/demon/demon.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Graficos/set/Inferno.png" type="Texture" id=27]
+[ext_resource path="res://fuentes/GameSetDemoRegular.ttf" type="DynamicFontData" id=28]
 
 [sub_resource type="DynamicFont" id=1]
 size = 11
@@ -183,7 +184,7 @@ outline_size = 1
 font_data = ExtResource( 11 )
 
 [sub_resource type="DynamicFont" id=5]
-font_data = ExtResource( 21 )
+font_data = ExtResource( 28 )
 
 [sub_resource type="Animation" id=6]
 length = 0.5
@@ -266,6 +267,22 @@ points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 } ]
 2/z_index = 0
 
+[sub_resource type="DynamicFont" id=10]
+size = 30
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 23
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 25
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 10 )
+
 [node name="Nivel2" type="Node2D"]
 script = ExtResource( 12 )
 
@@ -317,7 +334,7 @@ scale = Vector2( 0.596825, 0.506885 )
 texture = ExtResource( 24 )
 
 [node name="Inca" parent="." instance=ExtResource( 4 )]
-position = Vector2( 47.6464, 45.747 )
+position = Vector2( 66.3553, 71.5831 )
 
 [node name="Camera2D" type="Camera2D" parent="Inca"]
 current = true
@@ -370,9 +387,10 @@ action = "ui_up"
 [node name="Label" type="Label" parent="CanvasLayer" groups=[
 "vidas",
 ]]
-margin_left = 71.0
-margin_right = 111.0
-margin_bottom = 20.0
+margin_left = 70.4054
+margin_top = 4.45953
+margin_right = 110.405
+margin_bottom = 24.4595
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -380,7 +398,7 @@ __meta__ = {
 }
 
 [node name="Rata" parent="CanvasLayer/Label" instance=ExtResource( 13 )]
-position = Vector2( 1375.5, 197.105 )
+position = Vector2( 1345.7, 191.314 )
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
 margin_left = 1.49831
@@ -395,7 +413,6 @@ __meta__ = {
 }
 
 [node name="muerte" type="Node2D" parent="CanvasLayer"]
-visible = false
 position = Vector2( -3.00002, -187 )
 script = ExtResource( 19 )
 
@@ -410,7 +427,7 @@ __meta__ = {
 }
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/muerte"]
-position = Vector2( 156.801, 56.563 )
+position = Vector2( 157.55, 58.0613 )
 scale = Vector2( 0.579444, 0.541034 )
 texture = ExtResource( 18 )
 
@@ -428,9 +445,6 @@ __meta__ = {
 
 [node name="anim" type="AnimationPlayer" parent="CanvasLayer/muerte"]
 anims/mover = SubResource( 6 )
-
-[node name="RataRayCast2" parent="." instance=ExtResource( 10 )]
-position = Vector2( 2952, 160 )
 
 [node name="cubo" type="Area2D" parent="."]
 position = Vector2( 3917.45, 52.0245 )
@@ -455,14 +469,14 @@ position = Vector2( 560.891, 170.191 )
 [node name="huerfano" parent="." instance=ExtResource( 22 )]
 position = Vector2( 880, 56 )
 
-[node name="huerfano5" parent="." instance=ExtResource( 22 )]
-position = Vector2( 1320, 200 )
-
-[node name="huerfano6" parent="." instance=ExtResource( 22 )]
-position = Vector2( 3584, 216 )
-
 [node name="Rata" parent="." instance=ExtResource( 13 )]
 position = Vector2( 1744, 104 )
+
+[node name="Rata2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 3049.67, 165.162 )
+
+[node name="Rata3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 3593.29, 207.298 )
 
 [node name="tileMap2" type="Node" parent="."]
 
@@ -476,21 +490,34 @@ tile_data = PoolIntArray( 196612, 536870912, 0 )
 position = Vector2( 3871.9, 85.4732 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 65.5509
-margin_top = 24.7221
-margin_right = 239.551
-margin_bottom = 38.7221
-text = "Bienvenido dante al nivel 2"
+margin_left = 25.5462
+margin_top = 26.7188
+margin_right = 234.546
+margin_bottom = 44.7188
+custom_fonts/font = SubResource( 10 )
+text = "Bienvenido Dante al Nivel 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 4.75684
-margin_top = 124.272
-margin_right = 123.757
-margin_bottom = 138.272
-text = "Los no bautizados."
+margin_left = 28.7029
+margin_top = 134.0
+margin_right = 124.703
+margin_bottom = 148.0
+custom_fonts/font = SubResource( 11 )
+text = "LOS NO BAUTIZADOS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 1340.0
+margin_top = 235.0
+margin_right = 1406.0
+margin_bottom = 250.0
+custom_fonts/font = SubResource( 12 )
+text = "LA LUJURIA"
 __meta__ = {
 "_edit_use_anchors_": false
 }
