@@ -2,21 +2,21 @@
 
 [ext_resource path="res://Personajes/Enemigos/Enemigo.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Graficos/enemy-deadth.png" type="Texture" id=2]
-[ext_resource path="res://Graficos/malo.png" type="Texture" id=3]
 [ext_resource path="res://Personajes/Enemigos/Malo/Estados/Movimiento.gd" type="Script" id=4]
 [ext_resource path="res://Personajes/Enemigos/Malo/Estados/Muerto.gd" type="Script" id=5]
 [ext_resource path="res://Personajes/Enemigos/Malo/Malo.gd" type="Script" id=6]
 [ext_resource path="res://Personajes/Enemigos/Malo/Estados/StateMachine.gd" type="Script" id=7]
+[ext_resource path="res://Graficos/rat.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.4215, 13.5543 )
+extents = Vector2( 20.9062, 13.5543 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 7.0436, 10.928 )
+extents = Vector2( 17.7939, 10.928 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "Movimiento"
-length = 0.6
+length = 0.7
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("spr:hframes")
@@ -28,7 +28,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 5 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("spr:texture")
@@ -40,7 +40,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ ExtResource( 3 ) ]
+"values": [ ExtResource( 8 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("spr:frame")
@@ -49,10 +49,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2 ]
+"values": [ 0, 1, 2, 3, 4 ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath(".:collision_layer")
@@ -151,11 +151,11 @@ position = Vector2( -0.743256, 0.0743256 )
 shape = SubResource( 1 )
 
 [node name="spr" parent="." index="1"]
-position = Vector2( -0.313638, 0.234625 )
-scale = Vector2( 0.833408, 0.862611 )
-texture = ExtResource( 3 )
-hframes = 3
-frame = 2
+position = Vector2( -0.324504, -3.0688 )
+scale = Vector2( 0.394811, 0.186692 )
+texture = ExtResource( 8 )
+hframes = 5
+frame = 4
 
 [node name="StateMachine" parent="." index="2"]
 script = ExtResource( 7 )

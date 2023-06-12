@@ -251,6 +251,18 @@ position = Vector2( 928.3, 82.589 )
 
 [node name="Malo3" parent="." instance=ExtResource( 23 )]
 position = Vector2( 1718.79, 95.0213 )
+
+[node name="lobo" type="KinematicBody2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="lobo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lobo/Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lobo"]
+
+[node name="Node2D" type="Node2D" parent="lobo"]
+
+[node name="Sprite" type="Sprite" parent="lobo"]
 [connection signal="timeout" from="Inca/Camera2D/Timer" to="Inca/Camera2D" method="_on_Timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/muerte/Button" to="Inca" method="_on_Button_pressed"]
 [connection signal="animation_finished" from="CanvasLayer/muerte/anim" to="CanvasLayer/muerte" method="_on_anim_animation_finished"]
