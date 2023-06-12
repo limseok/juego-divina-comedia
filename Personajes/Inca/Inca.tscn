@@ -13,7 +13,7 @@
 [ext_resource path="res://Personajes/Inca/States/Herido.gd" type="Script" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.83402, 16.1181 )
+extents = Vector2( 6.98039, 11.1427 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Detenido"
@@ -195,6 +195,7 @@ scale = Vector2( 0.955113, 1.1775 )
 script = ExtResource( 5 )
 
 [node name="col" type="CollisionShape2D" parent="."]
+position = Vector2( 2.03593, 1.20103 )
 scale = Vector2( 0.982849, 1.37748 )
 shape = SubResource( 1 )
 
@@ -202,7 +203,8 @@ shape = SubResource( 1 )
 scale = Vector2( 1.29007, 1.13716 )
 
 [node name="spr" type="Sprite" parent="Position2D"]
-scale = Vector2( 0.2576, 0.325162 )
+position = Vector2( 0.645607, 0.528082 )
+scale = Vector2( 0.231172, 0.237755 )
 texture = ExtResource( 2 )
 hframes = 3
 frame = 1
